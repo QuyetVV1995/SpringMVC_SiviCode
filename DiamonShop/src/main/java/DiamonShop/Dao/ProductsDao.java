@@ -15,7 +15,9 @@ public class ProductsDao extends BaseDao {
 		sql.append("select p.id as id_product, p.id_catelogy, p.size, p.name, p.price, ");
 		sql.append("p.sale, p.title, p.highlight, p.new_product, p.details, p.created_at, p.update_at, ");
 		sql.append("c.name as name_color, c.id as id_color, c.code as code_color, c.img  from products as p ");
-		sql.append("inner join colors as c on p.id = c.id_product group by p.id, c.id_product");
+		sql.append("inner join colors as c on p.id = c.id_product group by p.id, c.id_product ");
+		sql.append("order by rand() ");
+		sql.append("limit 9 ");
 		return sql.toString();
 	}
 	

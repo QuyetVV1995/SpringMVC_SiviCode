@@ -26,7 +26,7 @@ public class ProductsDtoMapper implements RowMapper<ProductsDto> {
 		productsDto.setCreated_at(rs.getDate("created_at"));
 		productsDto.setUpdate_at(rs.getDate("update_at"));
 
-		return null;
+		return productsDto;
 	}
 
 }
