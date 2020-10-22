@@ -7,33 +7,19 @@
 	<!-- 
 Body Section 
 -->
+<h1>${catelogy.size()}</h1>
 	<div class="row">
 		<div id="sidebar" class="span3">
 			<div class="well well-small">
 				<ul class="nav nav-list">
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Watches</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fine Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Men's Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Vintage & Antique</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Diamonds </a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Beads</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-					<li style="border: 0">&nbsp;</li>
-					<li><a class="totalInCart" href="cart.html"><strong>Total
-								Amount <span class="badge badge-warning pull-right"
+				
+					<c:forEach var="item" items="${catelogy }">
+						<li><a href="/san-pham/${item.id}"><span
+							class="icon-circle-blank"></span> ${item.name} </a></li>
+					</c:forEach>
+				
+
+					<li><a class="totalInCart" href="cart.html"><strong>Tổng tiền <span class="badge badge-warning pull-right"
 								style="line-height: 18px;">$448.42</span>
 						</strong></a></li>
 				</ul>

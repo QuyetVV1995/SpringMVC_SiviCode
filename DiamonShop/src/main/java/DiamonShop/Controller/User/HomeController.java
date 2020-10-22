@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import DiamonShop.Dao.SlidesDao;
 import DiamonShop.Service.User.HomeServiceImpl;
 
 @Controller
@@ -17,6 +16,7 @@ public class HomeController {
 		public ModelAndView index() {
 			ModelAndView mv = new ModelAndView("user/index");
 			mv.addObject("slides", homeService.getDataSlide());
+			mv.addObject("catelogy", homeService.getDataCatelogy());
 			return mv;
 		}
 	
