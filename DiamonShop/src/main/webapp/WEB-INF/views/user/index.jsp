@@ -7,7 +7,7 @@
 	<!-- 
 Body Section 
 -->
-<h1>${menus.size()}</h1>
+<h1>${products.size()}</h1>
 	<div class="row">
 		<div id="sidebar" class="span3">
 			<div class="well well-small">
