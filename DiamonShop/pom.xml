@@ -9,7 +9,7 @@
 	<properties>
 		<spring.version>5.2.9.RELEASE</spring.version>
 	</properties>
-	
+
 	<dependencies>
 		<!-- spring-webmvc -->
 		<dependency>
@@ -54,6 +54,12 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.19</version>
+		</dependency>
+		<!-- javax.annotation-api -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
 		</dependency>
 
 	</dependencies>

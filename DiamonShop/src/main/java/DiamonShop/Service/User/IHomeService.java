@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import DiamonShop.Entity.Catelogy;
+import DiamonShop.Entity.Menus;
 import DiamonShop.Entity.Slides;
 @Service
 public interface IHomeService {
@@ -13,4 +14,6 @@ public interface IHomeService {
 	public List<Slides> getDataSlide();
 	
 	public List<Catelogy> getDataCatelogy();
+	
+	public List<Menus> getDataMenus();
 }
