@@ -26,6 +26,7 @@ public class CatelogyController extends BaseController {
 		PaginatesDto paginateInfo = paginatesService.getInfoPaginates(totalData, totalProductsPage, 1);
 		
 		_mvShare.addObject("paginateInfo", paginateInfo);
+		_mvShare.addObject("idCatelogy", id);
 		_mvShare.addObject("productsPaginate", catelogyService.getDataProductsPaginate(paginateInfo.getStart(), paginateInfo.getEnd()));
 		return _mvShare;
 	}

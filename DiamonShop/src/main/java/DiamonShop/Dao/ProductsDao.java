@@ -47,13 +47,13 @@ public class ProductsDao extends BaseDao {
 	private String SqlProductByID(int id) {
 		StringBuffer  sql = SqlString() ;
 		sql.append("where 1 = 1 ");
-		sql.append("and id_catelogy = "+id);	
+		sql.append("and id_catelogy = "+id+" ");	
 		return sql.toString();
 	}
 	
 	private String SqlProductPaginates(int start, int end) {
 		StringBuffer  sql = SqlString() ;
-		sql.append("and limit "+start+", "+end);	
+		sql.append("limit "+start+", "+end+" ");	
 		return sql.toString();
 	}
 	
