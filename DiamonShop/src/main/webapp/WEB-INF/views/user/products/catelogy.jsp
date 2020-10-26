@@ -5,6 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Sản phẩm</title>
+<style type="text/css">
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+</style>
 </head>
 <body>
 	<h1> ${idCatelogy }</h1>
@@ -324,5 +345,16 @@
 		</div>
 
 	</div>
+	<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+	
 </body>
 </html>

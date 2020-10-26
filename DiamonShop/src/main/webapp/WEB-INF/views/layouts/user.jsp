@@ -33,6 +33,7 @@
 <link rel="shortcut icon"
 	href="<c:url value="/assets/user/ico/favicon.ico"/>">
 </head>
+<decorator:head/>
 <body>
 	<!-- 
 	Upper Header Section 
