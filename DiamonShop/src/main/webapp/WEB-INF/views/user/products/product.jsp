@@ -14,6 +14,7 @@
 <div class="row product-content">
 <div id="sidebar" class="span3">
 <div class="well well-small">
+	<h1> ${product.id_product }</h1>
 	<ul class="nav nav-list">
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
