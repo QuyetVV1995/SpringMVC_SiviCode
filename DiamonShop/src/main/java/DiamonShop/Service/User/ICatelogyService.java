@@ -8,6 +8,6 @@ import DiamonShop.Dto.ProductsDto;
 
 @Service
 public interface ICatelogyService {
-	public List<ProductsDto> getDataProductsPaginate(int start, int end);
+	public List<ProductsDto> getDataProductsPaginate(int id,int start, int end);
 	public List<ProductsDto> getAllProductsByID(int id);
 }

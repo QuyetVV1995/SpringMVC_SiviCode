@@ -36,24 +36,24 @@ public class ProductsDao extends BaseDao {
 		sql.append("order by rand() ");
 		
 		if(highlight) {
-			sql.append("limit 2 ");
+			sql.append("limit 9 ");
 		}
 		if(newProduct) {
-			sql.append("limit 3 ");
+			sql.append("limit 12 ");
 		}	
 		return sql.toString();
 	}
 	
-	private String SqlProductByID(int id) {
+	private StringBuffer SqlProductByID(int id) {
 		StringBuffer  sql = SqlString() ;
 		sql.append("where 1 = 1 ");
 		sql.append("and id_catelogy = "+id+" ");	
-		return sql.toString();
+		return sql;
 	}
 	
-	private String SqlProductPaginates(int start, int end) {
-		StringBuffer  sql = SqlString() ;
-		sql.append("limit "+start+", "+end+" ");	
+	private String SqlProductPaginates(int id, int start, int totalPage) {
+		StringBuffer  sql = SqlProductByID(id) ;
+		sql.append("limit "+start+", "+totalPage+" ");	
 		return sql.toString();
 	}
 	
@@ -64,13 +64,13 @@ public class ProductsDao extends BaseDao {
 	} 
 	
 	public List<ProductsDto> getAllProductsByID(int id) {
-		String sql = SqlProductByID(id);
+		String sql = SqlProductByID(id).toString();
 		List<ProductsDto> listProductsByID = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProductsByID;
 	} 
 	
-	public List<ProductsDto> getDataProductsPaginates(int start, int end) {
-		String sql = SqlProductPaginates(start, end);
+	public List<ProductsDto> getDataProductsPaginates(int id,int start, int totalPage) {
+		String sql = SqlProductPaginates(id,start, totalPage);
 		List<ProductsDto> listProductsByID = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProductsByID;
 	} 

@@ -88,12 +88,12 @@
 
 	</div>
 	<div class="pagination">
-		<c:forEach var="item" begin="${paginateInfo.start }" end="${paginateInfo.end }" varStatus="loop">
+		<c:forEach var="item" begin="1" end="${paginateInfo.totalPage }" varStatus="loop">
 			<c:if test="${ (loop.index) == paginateInfo.currentPage}">
 				 <a class="active" href="<c:url value="/san-pham/${idCatelogy }/${loop.index }"></c:url>"> ${loop.index }</a>
 			</c:if>
 			<c:if test="${ (loop.index) != paginateInfo.currentPage}">
-				 <a  href="<c:url value="san-pham/${idCatelogy }/${loop.index }"></c:url>"> ${loop.index }</a>
+				 <a  href="<c:url value="/san-pham/${idCatelogy }/${loop.index }"></c:url>"> ${loop.index }</a>
 			</c:if>
 		</c:forEach>
 	</div>

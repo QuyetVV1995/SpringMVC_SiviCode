@@ -18,7 +18,7 @@ public class CatelogyServiceImpl implements ICatelogyService {
 		return productsDao.getAllProductsByID(id);
 	}
 	
-	public List<ProductsDto> getDataProductsPaginate(int start, int end){
-		return productsDao.getDataProductsPaginates(start, end);
+	public List<ProductsDto> getDataProductsPaginate(int id ,int start, int totalPage){
+		return productsDao.getDataProductsPaginates(id, start, totalPage);
 	}
 }
