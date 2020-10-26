@@ -1,5 +1,6 @@
 package DiamonShop.Dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -70,8 +71,16 @@ public class ProductsDao extends BaseDao {
 	} 
 	
 	public List<ProductsDto> getDataProductsPaginates(int id,int start, int totalPage) {
-		String sql = SqlProductPaginates(id,start, totalPage);
-		List<ProductsDto> listProductsByID = _jdbcTemplate.query(sql, new ProductsDtoMapper());
-		return listProductsByID;
+		StringBuffer sqlGetDatabyID = SqlProductByID(id);
+		List<ProductsDto> listProductsByID = _jdbcTemplate.query(sqlGetDatabyID.toString(), new ProductsDtoMapper());
+		List<ProductsDto> listProducts = new ArrayList<ProductsDto>();
+		
+		if(listProductsByID.size() > 0) {
+			String sql = SqlProductPaginates(id,start, totalPage);
+			listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		}
+		
+		
+		return listProducts;
 	} 
 }

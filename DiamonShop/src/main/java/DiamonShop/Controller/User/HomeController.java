@@ -13,7 +13,7 @@ public class HomeController extends BaseController {
 		_mvShare.addObject("slides", _homeService.getDataSlide());
 		_mvShare.addObject("catelogy", _homeService.getDataCatelogy());
 		_mvShare.addObject("products", _homeService.getDataProducts());
-		_mvShare.setViewName("user/index");
+		_mvShare.setViewName("user/products/product");
 			return _mvShare;
 		}
 	
