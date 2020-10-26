@@ -9,4 +9,6 @@ import DiamonShop.Dto.ProductsDto;
 @Service
 public interface IProductService {
 	public ProductsDto getProductById(long id);
+	
+	public List<ProductsDto> getProductByIdCatelogy(int id);
 }

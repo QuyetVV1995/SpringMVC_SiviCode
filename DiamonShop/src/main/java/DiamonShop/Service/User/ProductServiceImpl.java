@@ -19,4 +19,9 @@ public class ProductServiceImpl implements IProductService {
 		return listProducts.get(0);
 	}
 
+	public List<ProductsDto> getProductByIdCatelogy(int id) {
+		return productsDao.getAllProductsByID(id);
+		
+	}
+
 }
