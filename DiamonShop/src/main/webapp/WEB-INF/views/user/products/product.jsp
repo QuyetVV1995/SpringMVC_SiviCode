@@ -11,6 +11,9 @@
 </style>
 </head>
 <body>
+
+<h1> ${Cart.size() }</h1>
+
 <div class="row product-content">
 <div id="sidebar" class="span3">
 <div class="well well-small">
