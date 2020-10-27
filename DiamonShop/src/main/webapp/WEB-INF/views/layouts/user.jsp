@@ -54,8 +54,8 @@
 						href="register.html"><span class="icon-edit"></span> Free
 						Register </a> <a href="contact.html"><span class="icon-envelope"></span>
 						Contact us</a> <a href="cart.html"><span
-						class="icon-shopping-cart"></span> 2 Item(s) - <span
-						class="badge badge-warning"> $448.42</span></a>
+						class="icon-shopping-cart"></span> ${ TotalQuantyCart } Items <span
+						class="badge badge-warning"> ${ TotalPriceCart }</span></a> 
 				</div>
 			</div>
 		</div>

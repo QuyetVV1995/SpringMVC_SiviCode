@@ -12,8 +12,6 @@
 </head>
 <body>
 
-<h1> ${Cart.size() }</h1>
-
 <div class="row product-content">
 <div id="sidebar" class="span3">
 <div class="well well-small">
@@ -101,7 +99,7 @@
 				<h3>${product.name }</h3>
 				<hr class="soft"/>
 				
-				<form class="form-horizontal qtyFrm">
+				<form class="form-horizontal qtyFrm" method="get" action="<c:url value="/addCart/${product.id_product }"></c:url>">
 				  <div class="control-group">
 					<label class="control-label"><span><fmt:formatNumber type="number" groupingUsed="true"
 														value="${product.price}" />₫</span></label>
@@ -125,7 +123,7 @@
 				  <h4> </h4>
 				  <p>${product.title }
 				  <p>
-				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span>Thêm giỏ hàng</button>
 				</form>
 			</div>
 			</div>
