@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,9 +54,11 @@
 					</a> <a href="#"><span class="icon-user"></span> My Account</a> <a
 						href="register.html"><span class="icon-edit"></span> Free
 						Register </a> <a href="contact.html"><span class="icon-envelope"></span>
-						Contact us</a> <a href="cart.html"><span
-						class="icon-shopping-cart"></span> ${ TotalQuantyCart } Items <span
-						class="badge badge-warning"> ${ TotalPriceCart }</span></a> 
+						Contact us</a> <a href="<c:url value="/gio-hang"></c:url>"><span
+						class="icon-shopping-cart"></span> ${ TotalQuantyCart } Sản phẩm <span 
+						
+						class="badge badge-warning"> <fmt:formatNumber type="number" groupingUsed="true"
+														value="${TotalPriceCart}" />₫ </span></a> 
 				</div>
 			</div>
 		</div>
