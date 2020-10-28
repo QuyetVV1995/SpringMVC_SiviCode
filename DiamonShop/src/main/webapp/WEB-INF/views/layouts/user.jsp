@@ -100,5 +100,6 @@ Lower Header Section
 	<script
 		src='<c:url  value="/assets/user/js/jquery.scrollTo-1.4.3.1-min.js" ></c:url>'></script>
 	<script src='<c:url  value="/assets/user/js/shop.js" ></c:url>'></script>
+	<decorator:getProperty property="page.script"></decorator:getProperty>
 </body>
 </html>
