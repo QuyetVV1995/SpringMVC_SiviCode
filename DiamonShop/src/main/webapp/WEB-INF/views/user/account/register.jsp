@@ -123,17 +123,18 @@
 		<div class="span4">
 			<div class="well">
 			<h5>Đăng nhập hệ thống</h5>
-			<form>
+			<h1> ${statusLogin }</h1>
+			<form:form action="dang-nhap" method="POST" modelAttribute="user">  
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail">Email</label>
 				<div class="controls">
-				  <input class="span3"  type="text" placeholder="mời nhập email">
+				 <form:input type="email" class="span3" path="user" placeholder="mời nhập email"/> 			 
 				</div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword">Mật khẩu</label>
 				<div class="controls">
-				  <input type="password" class="span3" placeholder="mời nhập mật khẩu">
+				<form:input type="password" class="span3" path="password" placeholder="mời nhập mật khẩu"/> 	  
 				</div>
 			  </div>
 			  <div class="control-group">
@@ -141,7 +142,7 @@
 				  <button type="submit" class="defaultBtn">Đăng nhập</button> <a href="#">Quên mật khẩu</a>
 				</div>
 			  </div>
-			</form>
+			</form:form>
 		</div>
 		</div>
 	</div>	

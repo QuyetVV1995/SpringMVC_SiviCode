@@ -2,6 +2,7 @@ package DiamonShop.Dao;
 
 import org.springframework.stereotype.Repository;
 
+import DiamonShop.Entity.MapperUsers;
 import DiamonShop.Entity.Users;
 
 @Repository
@@ -23,6 +24,12 @@ public class UsersDao extends BaseDao{
 		
 		int insert = _jdbcTemplate.update(sql.toString());
 		return insert;
+	}
+	
+	public Users getUserByAccount(Users user) {
+		String  sql = "select * from users where user = '"+user.getUser()+"'";
+		Users rs = _jdbcTemplate.queryForObject(sql, new MapperUsers());
+		return rs;
 	}
 
 }

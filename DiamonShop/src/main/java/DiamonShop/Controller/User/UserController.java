@@ -1,5 +1,7 @@
 package DiamonShop.Controller.User;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,14 +18,14 @@ public class UserController extends BaseController {
 	@Autowired
 	AccountServiceImpl accountService = new AccountServiceImpl();
 	
-	@RequestMapping(value = "dang-ky", method = RequestMethod.GET)
+	@RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
 	public ModelAndView register() {
 		_mvShare.setViewName("user/account/register");
 		_mvShare.addObject("user", new Users());		
 			return _mvShare;
 	}
 
-	@RequestMapping(value = "dang-ky", method = RequestMethod.POST)
+	@RequestMapping(value = "/dang-ky", method = RequestMethod.POST)
 	public ModelAndView createAccount(@ModelAttribute("user") Users user) {
 		int count = accountService.addAccount(user);
 		if(count > 0) {
@@ -34,5 +36,17 @@ public class UserController extends BaseController {
 
 		_mvShare.setViewName("user/account/register");
 			return _mvShare;
+	}
+	
+	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
+	public ModelAndView login(HttpSession session, @ModelAttribute("user") Users user) {
+		boolean check = accountService.checkAccount(user);
+		if(check) {
+			_mvShare.setViewName("redirect:/");
+			session.setAttribute("loginInfo", user);
+		}else {
+			_mvShare.addObject("statusLogin", "Đăng nhập thất bại");
+		}
+		return _mvShare;
 	}
 }
