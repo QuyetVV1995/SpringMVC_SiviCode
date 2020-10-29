@@ -1,5 +1,7 @@
 package DiamonShop.Controller.User;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,13 +42,19 @@ public class UserController extends BaseController {
 	
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
 	public ModelAndView login(HttpSession session, @ModelAttribute("user") Users user) {
-		boolean check = accountService.checkAccount(user);
-		if(check) {
+		user = accountService.checkAccount(user);
+		if(user != null) {
 			_mvShare.setViewName("redirect:/");
-			session.setAttribute("loginInfo", user);
+			session.setAttribute("LoginInfo", user);
 		}else {
 			_mvShare.addObject("statusLogin", "Đăng nhập thất bại");
 		}
 		return _mvShare;
+	}
+	
+	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
+	public String logout(HttpSession session, HttpServletRequest request ) {
+		session.removeAttribute("LoginInfo");
+		return "redirect:"+request.getHeader("Referer");
 	}
 }

@@ -10,5 +10,5 @@ public interface IAccountService {
 	
 	public int addAccount(Users user);
 	
-	public boolean checkAccount(Users user);
+	public Users checkAccount(Users user);
 }

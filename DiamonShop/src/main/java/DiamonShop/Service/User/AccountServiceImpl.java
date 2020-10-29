@@ -20,17 +20,17 @@ public class AccountServiceImpl implements IAccountService{
 		return usersDao.AddAccount(user);
 	}
 
-	public boolean checkAccount(Users user) {
-		String pass = user.getPassword();
-		
+	public Users checkAccount(Users user) {
+		String pass = user.getPassword();	
 		user = usersDao.getUserByAccount(user);
+		
 		if(user != null) {
 			if(BCrypt.checkpw(pass, user.getPassword())) {
-				return true;
+				return user;
 			}else {
-				return false;
+				return null;
 			}
 		}
-		return false;
+		return null;
 	}
 }

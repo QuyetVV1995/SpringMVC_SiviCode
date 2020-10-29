@@ -43,8 +43,7 @@ Navigation Bar Section
 				class="icon-bar"></span> <span class="icon-bar"></span>
 			</a>
 			<div class="nav-collapse">
-				<ul class="nav">
-				
+				<ul class="nav">		
 					<c:forEach var="item" items="${menus }" varStatus="index">
 						<c:if test="${index.first }">
 							<li class="active">
@@ -54,14 +53,13 @@ Navigation Bar Section
 						</c:if>
 						<a href="index.html"> ${item.name }</a></li>
 					</c:forEach>
-				
-					
-				
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 					<input type="text" placeholder="Search" class="search-query span2">
 				</form>
+				
 				<ul class="nav pull-right">
+				<c:if test="${empty LoginInfo }">
 					<li class="dropdown"><a data-toggle="dropdown"
 						class="dropdown-toggle" href="#"><span class="icon-lock"></span>
 							Đăng nhập <b class="caret"></b></a>
@@ -84,6 +82,10 @@ Navigation Bar Section
 								</div>
 							</form>
 						</div></li>
+				</c:if>
+				<c:if test="${not empty LoginInfo }">
+					<li><a href="#">${LoginInfo.display_name} <b class="caret"></b> </a> </li>
+				</c:if>
 				</ul>
 			</div>
 		</div>
